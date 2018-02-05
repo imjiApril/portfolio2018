@@ -1,0 +1,319 @@
+/* 애니메이션 브라우저에 맞게 사용될수있게 적용
+transform도 브라우저에 맞게 적용 */
+
+li{
+   list-style: none;
+}
+a{
+   text-decoration: none;
+   color: black;
+}
+/* nav */
+#main_nav{
+   width: 100%;
+   height: 60px;
+   background-color: tomato;
+   position: absolute;
+   /* margin-top: -60px; */
+}
+#main_nav .logo>a>img{
+   width:110px;
+   margin: 13px 0 0 10px;
+}
+.hide_navList{
+   color:rgba(0,0,0,0);
+}
+#main_nav>nav>ul{
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translate(-50%);
+}
+#main_nav>nav>ul>li:first-child{
+   background: url(../images/mainNav.png) no-repeat 0 -66px;
+   position: absolute;
+   top: 2px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 119px;
+   height: 55px;
+   border: 1px solid yellow;
+}
+#all_menu_button{
+   position: absolute;
+    top: 0;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    z-index: 99;
+}
+#all_menu_button>input{
+   display: none;
+}
+#all_menu_button>.menu{
+   display: inline-block;
+   vertical-align: middle;
+    width: 50px;
+    height: 50px;
+}
+#all_menu_button>.menu span{
+   display: inline-block;
+   width: 45px;
+   height: 4px;
+   background-color: #fff;
+   border-radius: 5px;
+   transform-origin: 0px 2px;
+   transition: all .4s;
+}
+#all_menu_button>#menu:checked + label>span:nth-child(1){transform: rotate( 45deg);}
+#all_menu_button>#menu:checked + label>span:nth-child(2){opacity: 0}
+#all_menu_button>#menu:checked + label>span:nth-child(3){transform: rotate( -45deg);}
+#all_menu_list{
+   display: none;
+   width: 100%;
+   background-color: rgba(67, 118, 182, 0.99);
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 1;
+}
+#all_menu_list>ul{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 235px;
+}
+#all_menu_list>ul>li{
+   width:auto;
+   font-size: 50px;
+   line-height: 110px;
+   text-align: center;
+   margin: 0 auto;
+}
+#all_menu_list>ul>li>a{
+   color: #fff;
+   text-decoration: none;
+}
+#all_menu_list>ul>li>a:after{
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 5px;
+   left: 20px;
+   background: rgba(248, 249, 250, 0.81);
+   visibility: visible;
+   border-radius: 5px;
+   transform: scaleX(1);
+   transition: .25s linear;
+}
+#all_menu_list>ul>li>a:after{
+   left:0;
+}
+#all_menu_list>ul>li:first-child>a:after{
+   top: 61px;
+}
+#all_menu_list>ul>li:nth-child(2)>a:after{
+   top: 171px;
+}
+#all_menu_list>ul>li:nth-child(3)>a:after{
+   bottom: 155px;
+}
+#all_menu_list>ul>li:nth-child(4)>a:after{
+   bottom: 44px;
+}
+#all_menu_list>ul>li>a:hover:after{
+   visibility: hidden;
+   transform: scaleX(0);
+}
+/* paging */
+#nav{
+   position: fixed;
+   bottom: 31%;
+   right: 3%;
+   width: 10px;
+}
+#nav a{
+   display: inline-block;
+   width:10px; height: 10px;border-radius: 10px;
+border:3px solid rgb(247, 7, 145); margin-bottom: 30px; text-indent: -9999px;
+background-color: rgb(1, 1, 1);}
+
+#nav a:hover,
+#nav a.active{
+  background-color: #fff;
+}
+
+
+
+/* firstpage */
+#firtstPage{
+   width: 100%;
+   background-color: #000;
+}
+/* text animation */
+.svgBox{
+   width: 740px;
+   position: absolute;
+   top: 44%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+path{
+   stroke: #fff;
+   fill: #fff;
+   stroke-dasharray: 510;
+   opacity: 10;
+   -webkit-animation: animate 8s cubic-bezier(0,0.23,1,.1) alternate infinite;
+   -moz-animation: animate 8s cubic-bezier(0,0.23,1,.1) alternate infinite;
+   -o-animation: animate 8s cubic-bezier(0,0.23,1,.1) alternate infinite;
+   animation: animate 8s cubic-bezier(0,0.23,1,.1) alternate infinite;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes animate {
+   0%{opacity: 0;
+      fill: none;
+      stroke-dashoffset: 510;}
+   20%{opacity: 5;
+      fill: none;
+      stroke-dashoffset: 510;}
+   35%{fill: rgba(255,255,255,0);}
+   40%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+   100%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+}
+/* firefox */
+@-moz-keyframes animate {
+   0%{opacity: 0;
+      fill: none;
+      stroke-dashoffset: 510;}
+   20%{opacity: 5;
+      fill: none;
+      stroke-dashoffset: 510;}
+   35%{fill: rgba(255,255,255,0);}
+   40%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+   100%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+}
+/* opera */
+@-o-keyframes animate {
+   0%{opacity: 0;
+      fill: none;
+      stroke-dashoffset: 510;}
+   20%{opacity: 5;
+      fill: none;
+      stroke-dashoffset: 510;}
+   35%{fill: rgba(255,255,255,0);}
+   40%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+   100%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+}
+/* standard syntax */
+@keyframes animate {
+   0%{opacity: 0;
+      fill: none;
+      stroke-dashoffset: 510;}
+   20%{opacity: 5;
+      fill: none;
+      stroke-dashoffset: 510;}
+   35%{fill: rgba(255,255,255,0);}
+   40%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+   100%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+}
+
+/* scrollDownIcon */
+.scrollDownIcon{
+   position: absolute;
+   bottom: 5%;
+   left: 50%;
+   transform: translateX(-50%);
+   -webkit-animation: scrollDownIcon_ani 1s 3s linear infinite;
+   -moz-animation: scrollDownIcon_ani 1s 3s linear infinite;
+   -o-animation: scrollDownIcon_ani 1s 3s linear infinite;
+   animation: scrollDownIcon_ani 1s 3s linear infinite;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes scrollDownIcon_ani{
+   0%{}
+   30%{bottom: 5.5%;}
+   80%{bottom:4.5%;}
+}
+/* firefox */
+@-moz-keyframes scrollDownIcon_ani{
+   0%{}
+   30%{bottom: 5.5%;}
+   80%{bottom:4.5%;}
+}
+/* opera */
+@-o-keyframes scrollDownIcon_ani{
+   0%{}
+   30%{bottom: 5.5%;}
+   80%{bottom:4.5%;}
+}
+/* standard syntax */
+@keyframes scrollDownIcon_ani {
+   0%{}
+   30%{bottom: 5.5%;}
+   80%{bottom:4.5%;}
+}
+.scrollDownIcon>img{
+   width: 40px;
+   height: 40px;
+   -webkit-animation: opacityIcon 30s;
+   -moz-animation: opacityIcon 30s;
+   -o-animation: opacityIcon 30s;
+   animation: opacityIcon 30s;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes opacityIcon {
+   0%{opacity: 0;}
+   50%{opacity: 0.5;}
+   100%{opacity: 1;}
+}
+/* firefox */
+@-moz-keyframes opacityIcon {
+   0%{opacity: 0;}
+   50%{opacity: 0.5;}
+   100%{opacity: 1;}
+}
+/* opera */
+@-o-keyframes opacityIcon {
+   0%{opacity: 0;}
+   50%{opacity: 0.5;}
+   100%{opacity: 1;}
+}
+/* standard syntax */
+@keyframes opacityIcon {
+   0%{opacity: 0;}
+   50%{opacity: 0.5;}
+   100%{opacity: 1;}
+}
+/* secondPage */
+#secondPage{
+   width: 100%;
+   background-color: rgb(125, 153, 190);
+}
+/* thirdPage */
+#thirdPage{
+   width: 100%;
+   background-color: rgb(237, 168, 214);
+}
+/* fourthPage */
+#fourthPage{
+   width: 100%;
+   background-color: rgb(214, 139, 162);
+}
