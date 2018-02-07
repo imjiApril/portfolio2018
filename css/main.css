@@ -8,12 +8,15 @@ a{
    text-decoration: none;
    color: black;
 }
+
+
 /* nav */
 #main_nav{
    width: 100%;
    height: 60px;
    background-color: tomato;
-   position: absolute;
+   position: fixed;
+   /* position: absolute; */
    /* margin-top: -60px; */
 }
 #main_nav .logo>a>img{
@@ -29,8 +32,8 @@ a{
    left: 50%;
    transform: translate(-50%);
 }
-#main_nav>nav>ul>li:first-child{
-   background: url(../images/mainNav.png) no-repeat 0 -66px;
+#main_nav>nav>ul>li{
+   background: url(../images/mainNav.png) no-repeat 0 4px;
    position: absolute;
    top: 2px;
    left: 50%;
@@ -56,6 +59,7 @@ a{
    vertical-align: middle;
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }
 #all_menu_button>.menu span{
    display: inline-block;
@@ -151,6 +155,15 @@ background-color: rgb(1, 1, 1);}
 #firtstPage{
    width: 100%;
    background-color: #000;
+}
+/* nav hover */
+#blue{
+   content: "";
+   display: block;
+   height: 60px;
+   width:100%;
+   background-color: black;
+   /* opacity: 0; */
 }
 /* text animation */
 .svgBox{
