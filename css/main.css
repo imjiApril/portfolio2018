@@ -10,14 +10,13 @@ a{
 }
 
 
-/* nav */
+/****** nav ******/
 #main_nav{
    width: 100%;
    height: 60px;
-   background-color: tomato;
+   background-color: #000;
    position: fixed;
-   /* position: absolute; */
-   /* margin-top: -60px; */
+   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
 #main_nav .logo>a>img{
    width:110px;
@@ -40,7 +39,6 @@ a{
    transform: translateX(-50%);
    width: 119px;
    height: 55px;
-   border: 1px solid yellow;
 }
 #all_menu_button{
    position: absolute;
@@ -151,20 +149,13 @@ background-color: rgb(1, 1, 1);}
 
 
 
-/* firstpage */
+/****** firstpage ******/
 #firtstPage{
    width: 100%;
-   background-color: #000;
+   background: url(../images/rain.jpg) no-repeat;
+   background-size: cover;
 }
-/* nav hover */
-#blue{
-   content: "";
-   display: block;
-   height: 60px;
-   width:100%;
-   background-color: black;
-   /* opacity: 0; */
-}
+
 /* text animation */
 .svgBox{
    width: 740px;
@@ -315,18 +306,46 @@ path{
    50%{opacity: 0.5;}
    100%{opacity: 1;}
 }
-/* secondPage */
+/****** secondPage ******/
 #secondPage{
    width: 100%;
-   background-color: rgb(37, 66, 105);
+   border: 1px solid rgb(37, 66, 105);
 }
-/* thirdPage */
+/****** thirdPage ******/
 #thirdPage{
    width: 100%;
-   background-color: rgb(237, 168, 214);
+   border: 1px solid rgb(237, 168, 214);
 }
-/* fourthPage */
+#thirdPage div{
+border: 1px solid black;
+display: inline-block;
+margin-top: 100px;
+
+}
+#thirdPage div>img{
+   width: 350px;
+   height: 172px;
+}
+#thirdPage div.work_one>dt>img{
+   width: 250px;
+   height: 24px;
+   margin: 5px 50px;
+}
+#thirdPage div.work_two>dt>img{
+   width: 114px;
+   height: 24px;
+   margin: 5px 118px;
+}
+#thirdPage div.work_three>dt>img{
+   width: 103px;
+   height: 24px;
+   margin: 5px 123px;
+}
+
+/****** fourthPage ******/
 #fourthPage{
    width: 100%;
-   background-color: rgb(214, 139, 162);
+   border: 1px solid rgb(214, 139, 162);
+   background: url(../images/star.jpg) no-repeat;
+   background-size: cover;
 }

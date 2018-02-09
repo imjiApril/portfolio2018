@@ -30,8 +30,10 @@ $(document).ready(function() {
    $(ckbox).on('click', function() {
       if (ckbox.is(':checked')) {
          $('#all_menu_list').fadeIn();
+         $('#nav').fadeOut().css({'z-index':-1});
       } else {
          $('#all_menu_list').fadeOut();
+         $('#nav').fadeIn().css({'z-index':0});
       }
    });
 
@@ -90,7 +92,7 @@ $(function() {
    $(window).on('scroll', function() {
 
       //스크롤바 위치에 따른 페이징 활성화
-      var location = $('body,html').scrollTop() + 200;
+      var location = $('body,html').scrollTop() + 100;
       $('#container>div').each(function() {
          var tg = $(this).index();
          if ($(this).offset().top <= location) {
@@ -98,6 +100,7 @@ $(function() {
             $('#nav a').eq(tg).addClass('active');
          }
       })
+
 
       //처음 스크롤 일어날때 아래 페이지로 넘김과 동시에
       //숨겨있던 헤더 보이고 픽스되기
@@ -121,7 +124,7 @@ $(function() {
             });
          }
 
-      } else if (location == 200) { //첫번째 페이지일때
+      } else if (location <= 200) { //첫번째 페이지일때
          //네비, 페이징 안보이기
          $('#main_nav').fadeOut()
          $('#nav').fadeOut();
@@ -130,8 +133,8 @@ $(function() {
             'background-position': '0 4px'
          });
       }
-      // console.log('location: ' + location);
-      // console.log('windowHeight: ' + windowHeight);
+       console.log('location: ' + location);
+       console.log('windowHeight: ' + windowHeight);
    })
 
    //all_menu_list 클릭하면
@@ -147,6 +150,8 @@ $(function() {
       }, 1000);
       //네비화면 끄고
       $('#all_menu_list').fadeOut();
+      //숨겨놨던 paging 나타내기
+      $('#nav').fadeIn().css({'z-index':0});
       //input check box 체크안한걸로 상태 바꾸기
       $('input:checkbox[id="menu"]').prop('checked', false)
       return false;
