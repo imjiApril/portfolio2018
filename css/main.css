@@ -1,6 +1,9 @@
 /* 애니메이션 브라우저에 맞게 사용될수있게 적용
 transform도 브라우저에 맞게 적용 */
-
+body{
+   font-family: 'Nanum Gothic', sans-serif;
+   color: #262626;
+}
 li{
    list-style: none;
 }
@@ -8,13 +11,17 @@ a{
    text-decoration: none;
    color: black;
 }
+div{
+   box-sizing: border-box;
+}
 
 
 /****** nav ******/
 #main_nav{
+   z-index: 2;
    width: 100%;
    height: 60px;
-   background-color: #000;
+   background-color: #2d2d2d;
    position: fixed;
    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
@@ -74,11 +81,11 @@ a{
 #all_menu_list{
    display: none;
    width: 100%;
-   background-color: rgba(67, 118, 182, 0.99);
+   background-color: rgba(45, 45, 45, 0.99);
    position: absolute;
    top: 0;
    left: 0;
-   z-index: 1;
+   z-index: 98;
 }
 #all_menu_list>ul{
    position: absolute;
@@ -138,13 +145,26 @@ a{
 }
 #nav a{
    display: inline-block;
-   width:10px; height: 10px;border-radius: 10px;
-border:3px solid rgb(247, 7, 145); margin-bottom: 30px; text-indent: -9999px;
-background-color: rgb(1, 1, 1);}
+   width: 12px;
+   height: 12px;
+   border-radius: 10px;
+   border: 1px solid #2d2d2d;
+   margin-bottom: 30px;
+   text-indent: -9999px;
+   background-color: #2d2d2d;
+   transition: 0.3s;
+}
 
-#nav a:hover,
+#nav a:hover{
+   background-color:#FFB725;
+   border: 1px solid #FFB725;
+}
 #nav a.active{
-  background-color: #fff;
+   background-color: rgb(0, 0, 0);
+   border-radius: 0;
+   border: 2px solid rgb(0, 0, 0);
+   height: 0;
+   width:10px;
 }
 
 
@@ -306,46 +326,248 @@ path{
    50%{opacity: 0.5;}
    100%{opacity: 1;}
 }
-/****** secondPage ******/
-#secondPage{
+/****** common *******/
+#profilePage,
+#worksPage,
+#contactPage{
+   padding-top: 90px;
    width: 100%;
-   border: 1px solid rgb(37, 66, 105);
+   border: 1px solid brown;
 }
-/****** thirdPage ******/
-#thirdPage{
+
+/****** profilePage ******/
+#profilePage{
+}
+#profilePage .wrap_for_profilePage{
+   width: 1200px;
+   margin: 0 auto;
+}
+#profilePage .wrap_for_profilePage>p{
+   text-align: center;
+}
+#profilePage .wrap_for_profilePage>p:first-child{
+   font-size: 25px;
+   font-weight: bold;
+}
+#profilePage .wrap_for_profilePage hr{
+   border-width: 2px;
+   border-style: solid;
+   border-color: #FFB725;
+}
+#profilePage .wrap_for_profilePage h2{
+   font-size: 22px;
+   font-weight: bold;
+}
+#profilePage .wrap_for_profilePage .aboutBox,
+#profilePage .wrap_for_profilePage .skillsBox{
+   width: 49%;
+   line-height: 31px;
+}
+
+#profilePage .wrap_for_profilePage .aboutBox{
+   float: left;
+   text-align: right;
+}
+#profilePage .wrap_for_profilePage .skillsBox{
+   float: right;
+}
+#profilePage .wrap_for_profilePage .aboutBox span{
+   font-weight: bold;
+   font-size: 14px;
+}
+#profilePage .wrap_for_profilePage .aboutBox p{
+   line-height: 9px;
+   margin-bottom: 20px;
+}
+#profilePage .wrap_for_profilePage .skillsBox dl dt{
+   font-weight: bold;
+}
+#profilePage .wrap_for_profilePage .skillsBox dl:nth-child(n+5) dt{
+   margin-top: 9px
+}
+#profilePage .wrap_for_profilePage .skillsBox dl dd{
+   line-height: 25px;
+}
+
+
+/****** worksPage ******/
+#worksPage:before{
+   content: "";
+   display: block;
+   clear: both;
+}
+#worksPage{
+}
+#worksPage .wrap_for_works{
+   width:1200px;
+   margin: 0 auto;
+}
+#worksPage .wrap_for_works>div{
+   position:relative;
+   display: inline-block;
+   border-collapse: collapse;
+   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.26);
+   margin: 20px;
+}
+/* work page overlay */
+#worksPage .wrap_for_works>div>.overlay{
+   padding: 10px;
    width: 100%;
-   border: 1px solid rgb(237, 168, 214);
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 1;
+   background-color: rgba(0,0,0,0.8);
+   color: #fff;
+   display: none;
+   transition: 0.5s;
+   text-align: center;
 }
-#thirdPage div{
-border: 1px solid black;
-display: inline-block;
-margin-top: 100px;
+#worksPage .wrap_for_works>div:hover .overlay{
+   display: block;
+}
+#worksPage .wrap_for_works>div>.overlay .button{
+   width:70px;
+   height: 25px;
+   background-color: #FFB725;
+   border-radius: 3px;
+   margin: 0 auto;
+   text-align: center;
+   vertical-align: middle;
+   line-height: 22px;
+}
+#worksPage .wrap_for_works>div>.overlay .button a{
+   color: #2d2d2d;
+   font-weight: bold;
 
 }
-#thirdPage div>img{
+/*overlay 제목 */
+#worksPage .wrap_for_works>div>.overlay p:nth-child(1){
+   font-size: 20px;
+   font-weight: bold;
+}
+/* overlay 날짜 */
+#worksPage .wrap_for_works>div>.overlay p:nth-child(2){
+   font-size: 13px;
+   margin-top: 3px;
+}
+/* overlay 설명 */
+#worksPage .wrap_for_works>div>.overlay p:nth-child(4){
+   font-size: 15px;
+   line-height: 23px;
+}
+/* overlay 작업페이지 */
+#worksPage .wrap_for_works>div>.overlay p:nth-child(6){
+   font-size: 14px;
+   line-height: 17px;
+}
+
+#worksPage .wrap_for_works>div>img{
    width: 350px;
    height: 172px;
 }
-#thirdPage div.work_one>dt>img{
+
+#worksPage .wrap_for_works .work_one>div:nth-child(2)>img{
    width: 250px;
    height: 24px;
    margin: 5px 50px;
 }
-#thirdPage div.work_two>dt>img{
+#worksPage .wrap_for_works .work_two>div:nth-child(2)>img{
    width: 114px;
    height: 24px;
-   margin: 5px 118px;
+   margin: 5px 118px 5px;
 }
-#thirdPage div.work_three>dt>img{
+#worksPage .wrap_for_works .work_three>div:nth-child(2)>img{
    width: 103px;
    height: 24px;
    margin: 5px 123px;
 }
+#worksPage .wrap_for_works .work_four>div:nth-child(2)>img{
+   width: 135px;
+   height: 24px;
+   margin: 5px 0px 5px 133px;
+}
 
-/****** fourthPage ******/
-#fourthPage{
-   width: 100%;
-   border: 1px solid rgb(214, 139, 162);
-   background: url(../images/star.jpg) no-repeat;
-   background-size: cover;
+#worksPage .wrap_for_works>div>div:last-child>p:first-child{
+   text-align: center;
+   font-size: 15px;
+   line-height: 25px;
+   font-weight: 600;
+}
+#worksPage .wrap_for_works>div>div:last-child>p:last-child{
+   text-align: center;
+   font-size: 14px;
+   padding: 5px 0 13px;
+   font-weight: 700;
+}
+
+/****** contactPage ******/
+#contactPage{
+}
+#contactPage .ph_box{
+   border: 2px solid #000;
+   width:500px;
+   height: 50px;
+   position: relative;
+   margin: 149px auto 46px auto;
+   box-sizing: border-box;
+}
+#contactPage .ph_box p{
+   position: absolute;
+   text-align: center;
+   margin: auto;
+   vertical-align: middle;
+   left: 0;
+   right: 0;
+   line-height: 41px;
+   font-size: 28px;
+}
+#contactPage .ph_box p:nth-child(1){
+
+}
+#contactPage .ph_box p:nth-child(2){
+   display: none;
+}
+#contactPage .ph_box:hover p:nth-child(2){
+   display: block;
+   background-color: rgba(0,0,0,0.8);
+   color:#fff;
+   height: inherit;
+}
+#contactPage .ph_box:hover p:nth-child(1){
+   display: none;
+}
+#contactPage .mail_box{
+   border: 2px solid #000;
+   width:500px;
+   height: 50px;
+   position: relative;
+   margin:0 auto;
+   box-sizing: border-box;
+}
+#contactPage .mail_box p{
+   position: absolute;
+   text-align: center;
+   margin: auto;
+   vertical-align: middle;
+   left: 0;
+   right: 0;
+   line-height: 41px;
+   font-size: 28px;
+}
+#contactPage .mail_box p:nth-child(1){
+
+}
+#contactPage .mail_box p:nth-child(2){
+   display: none;
+}
+#contactPage .mail_box:hover p:nth-child(2){
+   display: block;
+   background-color: rgba(255, 183, 37, 0.88);
+   color:#fff;
+   height: inherit;
+}
+#contactPage .mail_box:hover p:nth-child(1){
+   display: none;
 }

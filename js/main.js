@@ -16,13 +16,6 @@ $(document).ready(function() {
       'display': 'none'
    });
 
-   //네비 호버 시 네비 슬라이드다운/업
-   // $('#blue').on('mouseenter',function(){
-   //    $('#main_nav').stop().slideDown().on('mouseleave',function(){
-   //       $(this).stop().slideUp();
-   //    });
-   // });
-
 
    //햄버거 클릭 시 전체화면 메뉴 보이기
    //input이 클릭 시 checked 되면 메뉴 보여지고, 사라지고
@@ -31,9 +24,11 @@ $(document).ready(function() {
       if (ckbox.is(':checked')) {
          $('#all_menu_list').fadeIn();
          $('#nav').fadeOut().css({'z-index':-1});
+         //$('#worksPage .wrap_for_works>div').css({'display':'static'});
       } else {
          $('#all_menu_list').fadeOut();
          $('#nav').fadeIn().css({'z-index':0});
+         //$('#worksPage .wrap_for_works>div').css({'display':'relative'});
       }
    });
 
@@ -133,8 +128,8 @@ $(function() {
             'background-position': '0 4px'
          });
       }
-       console.log('location: ' + location);
-       console.log('windowHeight: ' + windowHeight);
+       //console.log('location: ' + location);
+       //console.log('windowHeight: ' + windowHeight);
    })
 
    //all_menu_list 클릭하면
