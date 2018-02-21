@@ -152,4 +152,15 @@ $(function() {
       return false;
    })
 
+
+   //스크롤 발생될때 윈도우페이지만큼 내려오면 컨텐츠 보여주고 슬라이드하기
+   $(window).scroll(function(){
+
+         if($(this).scrollTop() >= windowHeight-10){
+            $('.aboutBox').animate({'margin-left':0},1000).css({'opacity':1});
+            $('.skillsBox').animate({'margin-right':0},1000).css({'opacity':1});
+            $('.wrap_for_profilePage').fadeTo(1000,1)
+         }
+
+   })
 })
