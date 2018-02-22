@@ -1,7 +1,9 @@
 /* 애니메이션 브라우저에 맞게 사용될수있게 적용
 transform도 브라우저에 맞게 적용 */
 body{
+   /* font-family: 'Noto Sans', sans-serif; */
    font-family: 'Nanum Gothic', sans-serif;
+   /* font-family: 'Nanum Myeongjo', serif; */
    color: #262626;
 }
 li{
@@ -142,6 +144,7 @@ div{
    bottom: 31%;
    right: 3%;
    width: 10px;
+   z-index: 2;
 }
 #nav a{
    display: inline-block;
@@ -189,10 +192,10 @@ path{
    fill: #fff;
    stroke-dasharray: 510;
    opacity: 10;
-   -webkit-animation: animate 8s cubic-bezier(0,0.23,1,.1) alternate infinite;
-   -moz-animation: animate 8s cubic-bezier(0,0.23,1,.1) alternate infinite;
-   -o-animation: animate 8s cubic-bezier(0,0.23,1,.1) alternate infinite;
-   animation: animate 8s cubic-bezier(0,0.23,1,.1) alternate infinite;
+   -webkit-animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
+   -moz-animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
+   -o-animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
+   animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes animate {
@@ -332,11 +335,11 @@ path{
 #contactPage{
    padding-top: 90px;
    width: 100%;
-   border: 1px solid brown;
 }
 
 /****** profilePage ******/
 #profilePage{
+   font-family: 'Noto Sans', sans-serif;
 }
 #profilePage .wrap_for_profilePage{
    width: 1200px;
@@ -348,8 +351,18 @@ path{
    text-align: center;
 }
 #profilePage .wrap_for_profilePage>p:first-child{
-   font-size: 25px;
+   margin-top: 40px;
+   font-size: 32px;
    font-weight: bold;
+}
+.wrap_for_profilePage>p:nth-child(2){
+   font-size: 14px;
+   margin-top: 7px;
+}
+.wrap_for_profilePage>p:nth-child(4){
+   line-height: 0px;
+   margin-bottom: 14px;
+   color: #cccccc;
 }
 #profilePage .wrap_for_profilePage hr{
    border-width: 2px;
@@ -389,7 +402,7 @@ path{
    font-weight: bold;
 }
 #profilePage .wrap_for_profilePage .skillsBox dl:nth-child(n+5) dt{
-   margin-top: 9px
+   margin-top: 11px
 }
 #profilePage .wrap_for_profilePage .skillsBox dl dd{
    line-height: 25px;
@@ -517,79 +530,7 @@ path{
 #contactPage{
    position: relative;
    overflow: hidden;
-}
-
-#contactPage .ph_box{
-   width:500px;
-   height: 50px;
-   position: relative;
-   margin: 149px auto 46px auto;
-   box-sizing: border-box;
-}
-#contactPage .ph_box p{
-   position: absolute;
-   text-align: center;
-   margin: auto;
-   vertical-align: middle;
-   left: 0;
-   right: 0;
-   line-height: 41px;
-   font-size: 28px;
-}
-#contactPage .ph_box p:nth-child(1){
-
-}
-#contactPage .ph_box p:nth-child(2){
-   display: none;
-   background-color: rgba(255, 183, 37, 0.88);
-   color: #fff;
-   height: inherit;
-   top: -2px;
-   left: -2px;
-   width: inherit;
-   line-height: 46px;
-}
-#contactPage .ph_box:hover p:nth-child(2){
-   display: block;
-}
-#contactPage .ph_box:hover p:nth-child(1){
-   display: none;
-}
-#contactPage .mail_box{
-   width:500px;
-   height: 50px;
-   position: relative;
-   margin:0 auto;
-   box-sizing: border-box;
-}
-#contactPage .mail_box p{
-   position: absolute;
-   text-align: center;
-   margin: auto;
-   vertical-align: middle;
-   left: 0;
-   right: 0;
-   line-height: 41px;
-   font-size: 28px;
-}
-#contactPage .mail_box p:nth-child(1){
-
-}
-#contactPage .mail_box p:nth-child(2){
-   display: none;
-   background-color: rgba(255, 183, 37, 0.88);
-   color: #fff;
-   height: inherit;
-   top: -2px;
-   left: -2px;
-   width: inherit;
-   line-height: 46px;
-}
-#contactPage .mail_box:hover p:nth-child(2){
-   display: block;
-}
-#contactPage .mail_box:hover p:nth-child(1){
-   display: none;
+   /* z-index: -1; */
 }
 video{
    position: absolute;
@@ -602,6 +543,55 @@ video{
    z-index: -100;
    overflow: hidden;
 }
+#contactPage .contact_box{
+
+}
+#contactPage .mobile{
+   position: absolute;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%);
+}
+#contactPage .mobile p{
+   font-size: 45px;
+   font-weight: bold;
+   color: #fff;
+   height: 63px;
+   display: none;
+}
+#contactPage .mobile:hover p{
+   display: block
+}
+#contactPage .mobile:hover img{
+   display: none;
+}
+#contactPage .mail{
+   position: absolute;
+   top: 42%;
+   left: 50%;
+   transform: translate(-50%);
+}
+#contactPage .mail p{
+   font-size: 45px;
+   font-weight: bold;
+   color: #fff;
+   height: 63px;
+   display: none;
+}
+#contactPage .mail:hover p{
+   display: block
+}
+#contactPage .mail:hover img{
+   display: none;
+}
+
+#contactPage .thks{
+   position: absolute;
+   top: 83%;
+   left: 50%;
+   transform: translate(-50%);
+}
+
 .memo{
    display: none;
 }

@@ -90,6 +90,7 @@ $(function() {
       var location = $('body,html').scrollTop() + 100;
       $('#container>div').each(function() {
          var tg = $(this).index();
+         console.log('tg:' + tg);
          if ($(this).offset().top <= location) {
             $('#nav a').removeClass('active');
             $('#nav a').eq(tg).addClass('active');
@@ -161,6 +162,14 @@ $(function() {
             $('.skillsBox').animate({'margin-right':0},1000).css({'opacity':1});
             $('.wrap_for_profilePage').fadeTo(1000,1)
          }
-
    })
+
+   //전화번호 이메일 호버시 글씨체 변경
+   // $('.mail').hover(function(){
+   //    $('.mail>img').attr('src','images/mail_hover.png');
+   // },function(){
+   //    $('.mail>img').attr('src','images/mail.png');
+   // })
+
+
 })
