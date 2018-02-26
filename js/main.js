@@ -1,4 +1,17 @@
 $(document).ready(function() {
+   //문서가 모두 로드되고 난 후 body내용 보임 처리
+   $(window).on('load',function(){
+      console.log('로딩완료!');
+      $('#loading-bg').animate({
+          opacity:0
+      },1000,function(){
+          //로딩화면 투명처리완료되면
+          $(this).remove();//요소삭제
+          $('html, body').removeAttr('style');
+      });
+   });
+
+
    //윈도우 height값 구한 뒤 설정하는 함수
    init();
 
