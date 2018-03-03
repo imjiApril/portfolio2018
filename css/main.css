@@ -37,6 +37,8 @@ div{
 #loading-bg .loading .circle{
     height: 100%;
     width: 100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     border-radius: 50%;
     border: 15px solid #FFB725;
     animation: loading 2s infinite linear;
@@ -45,6 +47,8 @@ div{
     position: absolute;
     width: 10px;
     height: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
     border-radius: 50%;
     background: #fff;
 }
@@ -74,6 +78,7 @@ div{
    position: fixed;
    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
+
 #main_nav .logo>a>img{
    width:110px;
    margin: 13px 0 0 10px;
@@ -120,6 +125,8 @@ div{
    width: 45px;
    height: 4px;
    background-color: #fff;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
    border-radius: 5px;
    transform-origin: 0px 2px;
    transition: all .4s;
@@ -162,6 +169,8 @@ div{
    left: 20px;
    background: rgba(248, 249, 250, 0.81);
    visibility: visible;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
    border-radius: 5px;
    transform: scaleX(1);
    transition: .25s linear;
@@ -197,6 +206,8 @@ div{
    display: inline-block;
    width: 12px;
    height: 12px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
    border-radius: 10px;
    border: 1px solid #2d2d2d;
    margin-bottom: 30px;
@@ -211,6 +222,8 @@ div{
 }
 #nav a.active{
    background-color: rgb(0, 0, 0);
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
    border-radius: 0;
    border: 2px solid rgb(0, 0, 0);
    height: 0;
@@ -235,78 +248,7 @@ div{
    transform: translate(-50%, -50%);
 }
 path{
-   stroke: #fff;
-   fill: #fff;
-   stroke-dasharray: 510;
-   opacity: 10;
-   -webkit-animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
-   -moz-animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
-   -o-animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
-   animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
-}
-/* Chrome, Safari, Opera */
-@-webkit-keyframes animate {
-   0%{opacity: 0;
-      fill: none;
-      stroke-dashoffset: 510;}
-   20%{opacity: 5;
-      fill: none;
-      stroke-dashoffset: 510;}
-   35%{fill: rgba(255,255,255,0);}
-   40%{opacity: 10;
-      fill: rgba(255,255,255,10);
-      stroke-dashoffset: 0;}
-   100%{opacity: 10;
-      fill: rgba(255,255,255,10);
-      stroke-dashoffset: 0;}
-}
-/* firefox */
-@-moz-keyframes animate {
-   0%{opacity: 0;
-      fill: none;
-      stroke-dashoffset: 510;}
-   20%{opacity: 5;
-      fill: none;
-      stroke-dashoffset: 510;}
-   35%{fill: rgba(255,255,255,0);}
-   40%{opacity: 10;
-      fill: rgba(255,255,255,10);
-      stroke-dashoffset: 0;}
-   100%{opacity: 10;
-      fill: rgba(255,255,255,10);
-      stroke-dashoffset: 0;}
-}
-/* opera */
-@-o-keyframes animate {
-   0%{opacity: 0;
-      fill: none;
-      stroke-dashoffset: 510;}
-   20%{opacity: 5;
-      fill: none;
-      stroke-dashoffset: 510;}
-   35%{fill: rgba(255,255,255,0);}
-   40%{opacity: 10;
-      fill: rgba(255,255,255,10);
-      stroke-dashoffset: 0;}
-   100%{opacity: 10;
-      fill: rgba(255,255,255,10);
-      stroke-dashoffset: 0;}
-}
-/* standard syntax */
-@keyframes animate {
-   0%{opacity: 0;
-      fill: none;
-      stroke-dashoffset: 510;}
-   20%{opacity: 5;
-      fill: none;
-      stroke-dashoffset: 510;}
-   35%{fill: rgba(255,255,255,0);}
-   40%{opacity: 10;
-      fill: rgba(255,255,255,10);
-      stroke-dashoffset: 0;}
-   100%{opacity: 10;
-      fill: rgba(255,255,255,10);
-      stroke-dashoffset: 0;}
+   fill:rgba(255,255,255,0);
 }
 
 /* scrollDownIcon */
@@ -382,6 +324,7 @@ path{
 #contactPage{
    padding-top: 90px;
    width: 100%;
+   overflow: hidden;
 }
 
 /****** profilePage ******/
@@ -390,6 +333,7 @@ path{
 }
 #profilePage .wrap_for_profilePage{
    width: 1200px;
+   /* width: 80%; */
    margin: 0 auto;
    overflow: hidden;
    opacity: 0;
@@ -466,15 +410,23 @@ path{
 }
 #worksPage .wrap_for_works{
    width:1200px;
+   /* width: 80%; */
    margin: 0 auto;
 }
 #worksPage .wrap_for_works>div{
    position:relative;
    display: inline-block;
    border-collapse: collapse;
-   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.26);
+   -webkit-box-shadow: 2px 2px 5px 0px #00000042;
+   -moz-box-shadow: 2px 2px 5px 0px #00000042;
+   box-shadow: 2px 2px 5px 0px #00000042;
    margin: 20px;
 }
+/* <!--[if IE]>
+#worksPage .wrap_for_works>div{
+   border: 1px solid #00000001;
+}
+<![endif]--> */
 /* work page overlay */
 #worksPage .wrap_for_works>div>.overlay{
    padding: 10px;
@@ -502,6 +454,8 @@ path{
    width:70px;
    height: 25px;
    background-color: rgba(255, 255, 255, 0.8);
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
    border-radius: 3px;
    margin: 0 auto;
    text-align: center;

@@ -9,6 +9,28 @@ $(document).ready(function() {
           $(this).remove();//요소삭제
           $('html, body').removeAttr('style');
       });
+
+      //svg시작
+      var pathes = $('#Layer_1').find('path');
+      pathes.each(function(i, path){
+         //1.path의 길이(length)를 구한다.
+         var total_length = path.getTotalLength();
+         console.log('total_length: ' + total_length);
+
+         //2.stroke-dasharray를 path의 길이(length)로 잡는다
+         path.style.strokeDasharray = total_length + " " + total_length;
+
+         //3.stroke-offset을 path의 길이로 잡는다. ( 기존의 path가 투명하게 안보임)
+         path.style.strokeDashoffset = total_length;
+
+         //4.애니메이션으로 stroke-offset을 0으로 가깝게 이동시킴
+         $(path).delay(1000).animate({
+            'strokeDashoffset':0,
+         },2000, 'linear', function(){
+            $(this).css({'fill':'rgba(255,255,255,1)','transition': '1.5s'});
+         });
+      })
+      //svg끝
    });
 
 
@@ -28,6 +50,7 @@ $(document).ready(function() {
    $('#nav').css({
       'display': 'none'
    });
+
 
 
    //햄버거 클릭 시 전체화면 메뉴 보이기
@@ -176,13 +199,5 @@ $(function() {
             $('.wrap_for_profilePage').fadeTo(1000,1)
          }
    })
-
-   //전화번호 이메일 호버시 글씨체 변경
-   // $('.mail').hover(function(){
-   //    $('.mail>img').attr('src','images/mail_hover.png');
-   // },function(){
-   //    $('.mail>img').attr('src','images/mail.png');
-   // })
-
 
 })
