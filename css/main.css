@@ -250,6 +250,32 @@ div{
 path{
    fill:rgba(255,255,255,0);
 }
+/* CSS SVG Animation start*/
+/* path{
+   stroke: #fff;
+   fill: #fff;
+   stroke-dasharray: 510;
+   opacity: 10;
+   animation: animate 6s cubic-bezier(0,0.23,1,.1) alternate infinite;
+} */
+
+/* standard syntax */
+/* @keyframes animate {
+   0%{opacity: 0;
+      fill: none;
+      stroke-dashoffset: 510;}
+   20%{opacity: 5;
+      fill: none;
+      stroke-dashoffset: 510;}
+   35%{fill: rgba(255,255,255,0);}
+   40%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+   100%{opacity: 10;
+      fill: rgba(255,255,255,10);
+      stroke-dashoffset: 0;}
+} */
+/* CSS SVG Animation end*/
 
 /* scrollDownIcon */
 .scrollDownIcon{
