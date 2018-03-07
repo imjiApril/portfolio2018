@@ -1,5 +1,6 @@
 /* 애니메이션 브라우저에 맞게 사용될수있게 적용
 transform도 브라우저에 맞게 적용 */
+@charset "UTF-8";
 body{
    /* font-family: 'Noto Sans', sans-serif; */
    font-family: 'Nanum Gothic', sans-serif;
