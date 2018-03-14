@@ -201,7 +201,7 @@ div{
    bottom: 31%;
    right: 3%;
    width: 10px;
-   z-index: 2;
+   z-index: 2 !important;
 }
 #nav a{
    display: inline-block;
