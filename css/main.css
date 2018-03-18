@@ -581,7 +581,8 @@ video{
    transform: translate(-50%);
 }
 #contactPage .mobile p{
-   width: 515px;
+   width: 525px;
+   text-align: center;
    font-size: 45px;
    font-weight: bold;
    color: #fff;
@@ -601,7 +602,8 @@ video{
    transform: translate(-50%);
 }
 #contactPage .mail p{
-   width: 680px;
+   width: 715px;
+   text-align: center;
    font-size: 45px;
    font-weight: bold;
    color: #fff;
