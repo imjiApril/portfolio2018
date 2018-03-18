@@ -444,9 +444,9 @@ path{
    position:relative;
    display: inline-block;
    border-collapse: collapse;
-   -webkit-box-shadow: 2px 2px 5px 0px #00000042;
-   -moz-box-shadow: 2px 2px 5px 0px #00000042;
-   box-shadow: 2px 2px 5px 0px #00000042;
+   -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.26);
+   -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.26);
+   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.26);
    margin: 20px;
 }
 /* <!--[if IE]>
