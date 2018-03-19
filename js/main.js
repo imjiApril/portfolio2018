@@ -15,7 +15,7 @@ $(document).ready(function() {
       pathes.each(function(i, path){
          //1.path의 길이(length)를 구한다.
          var total_length = path.getTotalLength();
-         console.log('total_length: ' + total_length);
+         // console.log('total_length: ' + total_length);
 
          //2.stroke-dasharray를 path의 길이(length)로 잡는다
          path.style.strokeDasharray = total_length + " " + total_length;
@@ -126,7 +126,7 @@ $(function() {
       var location = $('body,html').scrollTop() + 100;
       $('#container>div').each(function() {
          var tg = $(this).index();
-         console.log('tg:' + tg);
+         // console.log('tg:' + tg);
          if ($(this).offset().top <= location) {
             $('#nav a').removeClass('active');
             $('#nav a').eq(tg).addClass('active');
